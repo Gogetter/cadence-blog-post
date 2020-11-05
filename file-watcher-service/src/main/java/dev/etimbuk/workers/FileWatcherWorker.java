@@ -10,7 +10,6 @@ import com.uber.cadence.converter.JsonDataConverter;
 import com.uber.cadence.worker.Worker;
 import com.uber.cadence.worker.WorkerOptions;
 import dev.etimbuk.activities.notification.NotificationActivitiesImpl;
-import dev.etimbuk.activities.upload.FileUploadActivities;
 import dev.etimbuk.activities.upload.FileUploadActivitiesImpl;
 import dev.etimbuk.models.WorkflowData;
 import dev.etimbuk.workflows.FileWatcherClientWorkflow;
@@ -36,6 +35,7 @@ public class FileWatcherWorker {
         FileWatcherClientWorkflow workflow = workflowClient.newWorkflowStub(FileWatcherClientWorkflow.class,
                 workflowOptions);
 
+        //start workflow async
         WorkflowExecution workflowExecution = WorkflowClient.start(workflow::processFile, workflowData);
 
         log.info(String.format("Started process file workflow with workflowId %s and runId %s",
