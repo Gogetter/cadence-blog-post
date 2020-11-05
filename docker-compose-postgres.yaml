@@ -31,3 +31,8 @@ services:
       - "8088:8088"
     depends_on:
       - cadence
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+    - "8025:8025"
+    - "1025:1025"
