@@ -17,7 +17,7 @@ import java.util.Optional;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 
 @Slf4j
-public class DirectoryWatcherClient {
+public class FileWatcherClient {
     public static void main(String[] args) throws Exception {
         WatchService watchService = FileSystems.getDefault().newWatchService();
 
