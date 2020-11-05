@@ -10,10 +10,16 @@ repositories {
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
     implementation('com.uber.cadence:cadence-client:2.7.8')
     implementation('commons-configuration:commons-configuration:1.9')
     implementation('ch.qos.logback:logback-classic:1.2.3')
 
 
     testImplementation('junit:junit:4.12')
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
 }
