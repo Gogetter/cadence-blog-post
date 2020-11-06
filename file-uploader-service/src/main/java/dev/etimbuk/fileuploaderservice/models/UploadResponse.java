@@ -14,5 +14,6 @@ import lombok.Setter;
 public class UploadResponse {
     private boolean uploaded;
     private String fileName;
+    private String fileLocation;
     private String contentType;
 }

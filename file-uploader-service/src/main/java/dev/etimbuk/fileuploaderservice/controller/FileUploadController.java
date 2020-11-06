@@ -21,6 +21,7 @@ public class FileUploadController {
         log.info("File {} uploaded for processing and uploading", fileUploadInfo.getFilename());
         return ResponseEntity.ok(UploadResponse.builder()
                 .fileName(fileUploadInfo.getFilename())
+                .fileLocation(fileUploadInfo.getAbsoluteFilePath())
                 .contentType(fileUploadInfo.getFileExtension())
                 .uploaded(true)
                 .build());
