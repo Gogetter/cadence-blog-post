@@ -5,6 +5,7 @@ import dev.etimbuk.filenotificationservice.models.payload.request.SendEmailReque
 import dev.etimbuk.filenotificationservice.models.payload.response.EmailSendResponse;
 import dev.etimbuk.filenotificationservice.service.EmailService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.OK;
 
+@Slf4j
 @RestController
 @RequestMapping(value = "/notification/")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -24,7 +26,7 @@ public class NotificationController {
 
     @PostMapping("email")
     public ResponseEntity<EmailSendResponse> sendEmail(@RequestBody SendEmailRequestData sendEmailRequestData) {
-
+        log.debug("{}", sendEmailRequestData);
         try {
             emailService.sendEmail(sendEmailRequestData.getSender(), EmailData.from(sendEmailRequestData));
 
