@@ -3,7 +3,7 @@ package dev.etimbuk.workflows;
 import dev.etimbuk.activities.notification.NotificationActivities;
 import dev.etimbuk.activities.upload.FileUploadActivities;
 import dev.etimbuk.models.UploadResponse;
-import dev.etimbuk.models.WorkflowData;
+import dev.etimbuk.models.FileUploadInfo;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.uber.cadence.workflow.Workflow.newActivityStub;
@@ -19,7 +19,7 @@ public class FileWatcherClientWorkflowImpl implements FileWatcherClientWorkflow 
     }
 
     @Override
-    public void processFile(final WorkflowData workflowData) {
+    public void processFile(final FileUploadInfo workflowData) {
         UploadResponse uploadResponse;
         if (workflowData.getFilename() != null) {
             uploadResponse = fileUploadActivities.uploadFile(workflowData);

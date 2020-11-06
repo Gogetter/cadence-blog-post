@@ -1,9 +1,9 @@
 package dev.etimbuk.workflows;
 
 import com.uber.cadence.workflow.WorkflowMethod;
-import dev.etimbuk.models.WorkflowData;
+import dev.etimbuk.models.FileUploadInfo;
 
 public interface FileWatcherClientWorkflow {
     @WorkflowMethod
-    void processFile(WorkflowData workflowData);
+    void processFile(FileUploadInfo workflowData);
 }

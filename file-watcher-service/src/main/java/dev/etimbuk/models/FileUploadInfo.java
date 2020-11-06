@@ -13,8 +13,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class WorkflowData {
+public class FileUploadInfo {
     private String filename;
-    private byte[] fileContents;
+    private String absoluteFilePath;
     private String fileExtension;
 }

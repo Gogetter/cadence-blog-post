@@ -1,12 +1,10 @@
 package dev.etimbuk;
 
-import dev.etimbuk.models.WorkflowData;
+import dev.etimbuk.models.FileUploadInfo;
 import dev.etimbuk.workers.FileWatcherWorker;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.IOException;
 import java.nio.file.FileSystems;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.WatchEvent;
@@ -34,17 +32,17 @@ public class FileWatcherClient {
 
                 log.info("Event kind: {}. File affected:, {}.", event.kind(), filename.getFileName().toString());
 
-                FileWatcherWorker.executeWorkflow(buildWorkflowData(filename));
+                FileWatcherWorker.executeWorkflow(buildFileUploadInfo(filename));
             }
 
             key.reset();
         }
     }
 
-    private static WorkflowData buildWorkflowData(final Path filename) throws IOException {
-        return WorkflowData.builder()
+    private static FileUploadInfo buildFileUploadInfo(final Path filename) {
+        return FileUploadInfo.builder()
                 .filename(filename.toFile().getName())
-                .fileContents(Files.readAllBytes(filename))
+                .absoluteFilePath(filename.toAbsolutePath().toString())
                 .fileExtension(getFileExtension(filename.toFile().getPath()).orElse(""))
                 .build();
     }

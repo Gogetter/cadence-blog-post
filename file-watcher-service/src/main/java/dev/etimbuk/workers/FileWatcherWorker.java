@@ -11,7 +11,7 @@ import com.uber.cadence.worker.Worker;
 import com.uber.cadence.worker.WorkerOptions;
 import dev.etimbuk.activities.notification.NotificationActivitiesImpl;
 import dev.etimbuk.activities.upload.FileUploadActivitiesImpl;
-import dev.etimbuk.models.WorkflowData;
+import dev.etimbuk.models.FileUploadInfo;
 import dev.etimbuk.workflows.FileWatcherClientWorkflow;
 import dev.etimbuk.workflows.FileWatcherClientWorkflowImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ import static java.time.Duration.ofMinutes;
 
 @Slf4j
 public class FileWatcherWorker {
-    public static void executeWorkflow(final WorkflowData workflowData) {
+    public static void executeWorkflow(final FileUploadInfo workflowData) {
         startWorkflowWorker();
 
         WorkflowClient workflowClient = WorkflowClient.newInstance(workflowDomain,
