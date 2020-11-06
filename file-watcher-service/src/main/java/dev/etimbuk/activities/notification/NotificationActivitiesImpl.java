@@ -12,7 +12,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Map;
 
-import static dev.etimbuk.models.FileWatcherConstants.fileUploadServiceUrl;
 import static dev.etimbuk.models.FileWatcherConstants.notificationServiceUrl;
 
 @Slf4j
