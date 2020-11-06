@@ -17,4 +17,5 @@ public class FileUploadInfo {
     private String filename;
     private String absoluteFilePath;
     private String fileExtension;
+    private String fileLocation;
 }
