@@ -16,4 +16,5 @@ public class UploadResponse {
     private boolean uploaded;
     private String fileName;
     private String contentType;
+    private String fileLocation;
 }
