@@ -4,7 +4,7 @@ import com.uber.cadence.activity.ActivityMethod;
 import dev.etimbuk.models.UploadResponse;
 import dev.etimbuk.models.FileUploadInfo;
 
-public interface FileUploadActivities {
+public interface FileUploadActivity {
     @ActivityMethod(scheduleToCloseTimeoutSeconds = 100)
     UploadResponse uploadFile(FileUploadInfo workflowData);
 }

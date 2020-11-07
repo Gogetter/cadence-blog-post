@@ -15,7 +15,7 @@ import java.util.Map;
 import static dev.etimbuk.models.FileWatcherConstants.notificationServiceUrl;
 
 @Slf4j
-public class NotificationActivitiesImpl implements NotificationActivities {
+public class NotificationActivityImpl implements NotificationActivity {
     @Override
     public void sendNotification(final UploadResponse uploadResponse) {
         final Gson gson = new Gson();

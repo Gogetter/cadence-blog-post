@@ -9,8 +9,8 @@ import com.uber.cadence.converter.DataConverter;
 import com.uber.cadence.converter.JsonDataConverter;
 import com.uber.cadence.worker.Worker;
 import com.uber.cadence.worker.WorkerOptions;
-import dev.etimbuk.activities.notification.NotificationActivitiesImpl;
-import dev.etimbuk.activities.upload.FileUploadActivitiesImpl;
+import dev.etimbuk.activities.notification.NotificationActivityImpl;
+import dev.etimbuk.activities.upload.FileUploadActivityImpl;
 import dev.etimbuk.models.FileUploadInfo;
 import dev.etimbuk.workflows.FileWatcherClientWorkflow;
 import dev.etimbuk.workflows.FileWatcherClientWorkflowImpl;
@@ -52,7 +52,7 @@ public class FileWatcherWorker {
         worker.registerWorkflowImplementationTypes(FileWatcherClientWorkflowImpl.class);
 
         //register workflow activities
-        worker.registerActivitiesImplementations(new FileUploadActivitiesImpl(), new NotificationActivitiesImpl());
+        worker.registerActivitiesImplementations(new FileUploadActivityImpl(), new NotificationActivityImpl());
         workerFactory.start();
     }
 

@@ -14,7 +14,7 @@ import java.net.http.HttpResponse;
 import static dev.etimbuk.models.FileWatcherConstants.fileUploadServiceUrl;
 
 @Slf4j
-public class FileUploadActivitiesImpl implements FileUploadActivities {
+public class FileUploadActivityImpl implements FileUploadActivity {
     @Override
     public UploadResponse uploadFile(final FileUploadInfo workflowData) {
         final Gson gson = new Gson();
