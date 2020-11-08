@@ -1,23 +1,17 @@
-# Getting Started
+## About
 
-### Reference Documentation
-For further reference, please consider the following sections:
+This application is used by `file-watcher-service` to process file information
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.5.RELEASE/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.5.RELEASE/gradle-plugin/reference/html/#build-image)
-* [Java Mail Sender](https://docs.spring.io/spring-boot/docs/2.3.5.RELEASE/reference/htmlsingle/#boot-features-email)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.5.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+## How to Use
 
-### Guides
-The following guides illustrate how to use some features concretely:
+* Clone project to a directory on your pc
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+    ``git clone https://github.com/Gogetter/cadence-blog-post.git``
 
-### Additional Links
-These additional references should also help you:
+* Change directory into `cadence-blog-post` project
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+    ```cd cadence-blog-post```
 
+* Launch a Command Line Interface (or Terminal) and run below command to startup the application
+
+    ```./gradlew bootRun```
