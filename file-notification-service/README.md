@@ -1,6 +1,6 @@
 ## About
 
-This application is used by `file-watcher-service` to process file information
+This application is used by `file-watcher-service` to send email notifications using MailHog once a file information has been processed
 
 ## How to Use
 
