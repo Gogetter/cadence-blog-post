@@ -10,7 +10,7 @@ This application is used by `file-watcher-service` to send email notifications u
 
 * Change directory into `cadence-blog-post` project
 
-    ```cd cadence-blog-post/file-notification```
+    ```cd cadence-blog-post/file-notification-service```
 
 * Launch a Command Line Interface (or Terminal) and run below command to startup the application
 
