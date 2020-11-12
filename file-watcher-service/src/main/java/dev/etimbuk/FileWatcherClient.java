@@ -32,7 +32,9 @@ public class FileWatcherClient {
 
                 log.info("Event kind: {}. File affected:, {}.", event.kind(), filename.getFileName().toString());
 
-                FileWatcherWorker.executeWorkflow(buildFileUploadInfo(filename));
+                if (filename.toFile().isFile()) {
+                    FileWatcherWorker.executeWorkflow(buildFileUploadInfo(filename));
+                }
             }
 
             key.reset();
